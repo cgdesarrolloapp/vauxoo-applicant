@@ -3,6 +3,7 @@ PrimeClass with method is_prime checks when integer number is prime number
 """
 import math
 
+
 class PrimeClass(object):
     """
     Your class documentation here
@@ -13,7 +14,6 @@ class PrimeClass(object):
         First validate numbers inder 2 and equals 2, later iterates from 2
         until num_int-1 with temp variant
         """
-        # Start evaluation
         if num_int < 2:
             return False
         elif num_int == 2:
