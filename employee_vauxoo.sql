@@ -11,8 +11,11 @@ CREATE TABLE employee (
 	first_name varchar (50) NOT NULL,
 	last_name  varchar (50) NOT NULL,
 	employee_department_id integer NOT NULL,
+	manager_id serial NOT NULL,
   	CONSTRAINT employee_pkey PRIMARY KEY (id),
-  	FOREIGN KEY (employee_department_id) REFERENCES employee_department (id)
+  	FOREIGN KEY (employee_department_id) REFERENCES employee_department (id),
+  	FOREIGN KEY (manager_id) REFERENCES employee
+      	ON DELETE CASCADE ON UPDATE CASCADE
 
 );
 
@@ -38,10 +41,10 @@ INSERT INTO employee_department (name, description) VALUES ('Marketing', 'Mercad
 INSERT INTO employee_department (name, description) VALUES ('Logistica', 'Logistica');
 INSERT INTO employee_department (name, description) VALUES ('Finanzas', 'Administracion y finanzas');
 
-INSERT INTO employee (first_name, last_name, employee_department_id ) VALUES ('Maria', 'Ruiz','1');
-INSERT INTO employee (first_name, last_name, employee_department_id ) VALUES ('Juan', 'Perez','2');
-INSERT INTO employee (first_name, last_name, employee_department_id ) VALUES ('Carlos', 'Ramirez','4');
-INSERT INTO employee (first_name, last_name, employee_department_id ) VALUES ('Luis', 'Diaz','4');
+INSERT INTO employee (first_name, last_name, employee_department_id, manager_id ) VALUES ('Maria', 'Ruiz','1','1');
+INSERT INTO employee (first_name, last_name, employee_department_id, manager_id ) VALUES ('Juan', 'Perez','2','1');
+INSERT INTO employee (first_name, last_name, employee_department_id, manager_id ) VALUES ('Carlos', 'Ramirez','4','1');
+INSERT INTO employee (first_name, last_name, employee_department_id, manager_id ) VALUES ('Luis', 'Diaz','4','1');
 
 INSERT INTO employee_hobby (name, description) VALUES ('Natacion', 'practica natacion');
 INSERT INTO employee_hobby (name, description) VALUES ('Arte', 'Artista');
