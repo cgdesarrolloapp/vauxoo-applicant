@@ -1,13 +1,11 @@
 """
-PrimeClass with method is_prime indicate when integer number is prime number
+PrimeClass with method is_prime checks when integer number is prime number
 """
 import math
 
-
 class PrimeClass(object):
     """
-    is_prime method will return false or true when the integer
-    number is primer or not
+    Your class documentation here
     """
 
     def is_prime(self, num_int):

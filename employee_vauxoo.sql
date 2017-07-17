@@ -1,4 +1,3 @@
-
 CREATE TABLE employee_department (
 	id          serial,
 	name        varchar (50) NOT NULL,
