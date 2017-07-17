@@ -1,7 +1,6 @@
 """
 PrimeClass with method is_prime checks when integer number is prime number
 """
-import math
 
 
 class PrimeClass(object):
@@ -16,13 +15,7 @@ class PrimeClass(object):
         """
         if num_int < 2:
             return False
-        elif num_int == 2:
-            return True
-        else:
-            temp = math.floor(num_int/2)
-            while temp >= 2:
-                if num_int % temp == 0:
-                    return False
-                else:
-                    temp = temp-1
+        for valor in range(2, num_int):
+            if num_int % valor == 0:
+                return False
             return True
